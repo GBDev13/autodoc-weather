@@ -1,8 +1,7 @@
-import { fireEvent, screen } from '@testing-library/react'
+import { waitFor, screen } from '@testing-library/react'
 import { Sidebar } from 'components/Sidebar'
 import { renderWithProviders } from 'test-utils'
-
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+import userEvent from '@testing-library/user-event'
 
 jest.mock('firebase/database', () => ({
   ...jest.mock('firebase/database'),
@@ -12,11 +11,13 @@ jest.mock('firebase/database', () => ({
 describe('Sidebar component', () => {
   it('should fill search input', async () => {
     renderWithProviders(<Sidebar />)
-    fireEvent.change(screen.getByTestId('search'), {
-      target: { value: 'Vacaria' },
-    })
-    await sleep(600)
 
-    expect(true).toBeTruthy()
+    const inputValue = 'City Search'
+    const input = screen.getByTestId('search') as HTMLInputElement
+    userEvent.type(input, inputValue)
+
+    await waitFor(() => {
+      expect(input.value).toEqual(inputValue)
+    })
   })
 })

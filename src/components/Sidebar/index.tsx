@@ -53,6 +53,7 @@ export function Sidebar() {
             key={city.name}
             isActive={city.name === currentCityName}
             onClick={() => handleSelectCity(city.name)}
+            data-testid='navbutton'
           >
             {city.name}
           </NavButton>
