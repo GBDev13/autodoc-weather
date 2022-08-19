@@ -21,6 +21,17 @@
 ### 🔗 Online Project
 * [autodoc.weather](https://autodoc-weather.vercel.app/)
 
+## 📋 Anotações
+
+### Vite
+Utilizei meu boilerplate de Vite pois é como mais tenho iniciado meus projetos React recentemente. Sinto uma velocidade maior ao desenvolver usando ele.
+
+### Redux Toolkit
+Utilizei o Redux Toolkit pois ele possibilita uma configuração mais rápida e simplificada de uma store do Redux.
+
+### Styled Components
+Escolhi desenvolver os estilos com essa lib pois é a que mais tenho experiência, consigo criar componentes com mais velocidade.
+
 &nbsp;
 
 <p align="center">Made with 💙 by GBDev</p>
