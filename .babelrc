@@ -1,0 +1,36 @@
+{
+  "env": {
+    "test": {
+      "presets": [
+        "react-app",
+        "@babel/preset-typescript"
+      ],
+      "plugins": [
+        "babel-plugin-styled-components",
+        ["@babel/plugin-transform-react-jsx", {
+          "runtime": "automatic"
+        }],
+        "babel-plugin-transform-vite-meta-env",
+        [
+          "@babel/plugin-proposal-private-property-in-object",
+          {
+            "loose": true
+          }
+        ],
+        [
+          "@babel/plugin-proposal-private-methods",
+          {
+            "loose": true
+          }
+        ],
+        [
+          "@babel/plugin-proposal-class-properties",
+          {
+            "loose": true
+          }
+        ]
+      ]
+    }
+  }
+}
+
