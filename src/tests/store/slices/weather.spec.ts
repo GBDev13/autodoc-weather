@@ -6,6 +6,11 @@ import weatherReducer, {
   setCurrentCityWeather,
 } from 'store/slices/weather'
 
+jest.mock('firebase/database', () => ({
+  ...jest.mock('firebase/database'),
+  getDatabase: jest.fn(),
+}))
+
 describe('Weather reducer', () => {
   const state: IWeather = {
     availableCities: [],

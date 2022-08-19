@@ -6,7 +6,7 @@ import { api } from '../lib/axios'
 import { db, storage } from '../lib/firebase'
 import { IState } from '../store/types'
 
-interface GetCityParams {
+export interface GetCityParams {
   city?: WeatherCity
   cityName?: string
 }
@@ -49,8 +49,7 @@ export const getCityWeather = createAsyncThunk(
       })
 
       return { data, ...(cityData?.cityName && { setCurrent: true }) }
-    } catch (err) {
-      console.log(err)
+    } catch {
       return null
     }
   },
